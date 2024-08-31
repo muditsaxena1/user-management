@@ -31,3 +31,13 @@ func (s *InMemoryUserStorage) GetUser(id string) (*models.User, error) {
 	}
 	return nil, errors.New("user not found")
 }
+
+func (s *InMemoryUserStorage) ListUsers() ([]models.User, error) {
+	defer s.mutex.RUnlock()
+	s.mutex.RLock()
+	users := make([]models.User, 0, len(s.users))
+	for _, user := range s.users {
+		users = append(users, user)
+	}
+	return users, nil
+}

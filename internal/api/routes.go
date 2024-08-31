@@ -10,4 +10,5 @@ func SetupRoutes(router *gin.Engine) {
 
 	authorized.GET("/user/:id", GetUser)
 	authorized.POST("/user", SetUser)
+	authorized.GET("/users", ListUsers)
 }
