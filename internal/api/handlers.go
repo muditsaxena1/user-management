@@ -39,7 +39,7 @@ func GetUser(c *gin.Context) {
 
 func ListUsers(c *gin.Context) {
 	if users, err := usersStorage.ListUsers(); err != nil {
-		c.JSON(http.StatusNotFound, gin.H{"error": "internal server error"})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})
 		return
 	} else {
 		c.JSON(http.StatusOK, users)
