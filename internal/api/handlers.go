@@ -16,7 +16,7 @@ func SetUser(c *gin.Context) {
 	var user models.User
 
 	// Bind the JSON body to the struct
-	if err := c.BindJSON(&user); err != nil {
+	if err := c.ShouldBindJSON(&user); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}

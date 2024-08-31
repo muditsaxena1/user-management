@@ -1,7 +1,7 @@
 package models
 
 type User struct {
-	ID         string `json:"id"`
-	Name       string `json:"name"`
-	SignupTime int64  `json:"signupTime"`
+	ID         string `json:"id" binding:"required"`
+	Name       string `json:"name" binding:"required,min=2"`
+	SignupTime int64  `json:"signupTime" binding:"required,min=-3786825600000"`
 }
