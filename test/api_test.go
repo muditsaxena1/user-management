@@ -8,9 +8,9 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	"github.com/muditsaxena1/url-shortner/internal/api"
-	"github.com/muditsaxena1/url-shortner/internal/models"
-	"github.com/muditsaxena1/url-shortner/internal/storage"
+	"github.com/muditsaxena1/user-management/internal/api"
+	"github.com/muditsaxena1/user-management/internal/models"
+	"github.com/muditsaxena1/user-management/internal/storage"
 	"github.com/stretchr/testify/assert"
 )
 

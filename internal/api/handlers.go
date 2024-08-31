@@ -5,8 +5,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/muditsaxena1/url-shortner/internal/models"
-	"github.com/muditsaxena1/url-shortner/internal/storage"
+	"github.com/muditsaxena1/user-management/internal/models"
+	"github.com/muditsaxena1/user-management/internal/storage"
 )
 
 var (

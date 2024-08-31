@@ -1,4 +1,4 @@
-module github.com/muditsaxena1/url-shortner
+module github.com/muditsaxena1/user-management
 
 go 1.23.0
 

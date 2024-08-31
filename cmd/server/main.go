@@ -7,7 +7,7 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	"github.com/muditsaxena1/url-shortner/internal/api"
+	"github.com/muditsaxena1/user-management/internal/api"
 )
 
 func main() {

@@ -1,8 +1,8 @@
 package storage
 
 import (
-	"github.com/muditsaxena1/url-shortner/internal/errors"
-	"github.com/muditsaxena1/url-shortner/internal/models"
+	"github.com/muditsaxena1/user-management/internal/errors"
+	"github.com/muditsaxena1/user-management/internal/models"
 )
 
 type Storage interface {
