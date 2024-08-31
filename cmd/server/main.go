@@ -1,3 +1,5 @@
+//go:build ignorecoverage
+
 package main
 
 import (
