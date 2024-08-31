@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 
 	"github.com/gin-gonic/gin"
@@ -8,10 +9,13 @@ import (
 )
 
 func main() {
+	port := flag.String("port", "8080", "server port")
+	flag.Parse()
+
 	router := gin.Default()
 
 	api.SetupRoutes(router)
 
-	log.Println("Server running on port 8080")
-	router.Run(":8080")
+	log.Printf("Server running on port %s", *port)
+	router.Run(":" + *port)
 }
