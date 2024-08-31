@@ -21,7 +21,10 @@ func SetUser(c *gin.Context) {
 		return
 	}
 
-	usersStorage.SetUser(user)
+	if err := usersStorage.SetUser(user); err != nil {
+		c.JSON(err.StatusCode, gin.H{"error": err.Message})
+		return
+	}
 
 	c.JSON(http.StatusOK, gin.H{"status": "user set successfully"})
 }
@@ -30,7 +33,7 @@ func GetUser(c *gin.Context) {
 	id := c.Param("id")
 
 	if user, err := usersStorage.GetUser(id); err != nil {
-		c.JSON(http.StatusNotFound, gin.H{"error": "user not found"})
+		c.JSON(err.StatusCode, gin.H{"error": err.Message})
 		return
 	} else {
 		c.JSON(http.StatusOK, user)
@@ -39,7 +42,7 @@ func GetUser(c *gin.Context) {
 
 func ListUsers(c *gin.Context) {
 	if users, err := usersStorage.ListUsers(); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "internal server error"})
+		c.JSON(err.StatusCode, gin.H{"error": err.Message})
 		return
 	} else {
 		c.JSON(http.StatusOK, users)
