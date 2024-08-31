@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	usersStorage = storage.NewInMemoryUserStorage()
+	UsersStorage = storage.NewInMemoryUserStorage()
 )
 
 func SetUser(c *gin.Context) {
@@ -47,7 +47,7 @@ func SetUser(c *gin.Context) {
 		return
 	}
 
-	if err := usersStorage.SetUser(user); err != nil {
+	if err := UsersStorage.SetUser(user); err != nil {
 		c.JSON(err.StatusCode, gin.H{"error": err.Message})
 		return
 	}
@@ -58,7 +58,7 @@ func SetUser(c *gin.Context) {
 func GetUser(c *gin.Context) {
 	id := c.Param("id")
 
-	if user, err := usersStorage.GetUser(id); err != nil {
+	if user, err := UsersStorage.GetUser(id); err != nil {
 		c.JSON(err.StatusCode, gin.H{"error": err.Message})
 		return
 	} else {
@@ -67,7 +67,7 @@ func GetUser(c *gin.Context) {
 }
 
 func ListUsers(c *gin.Context) {
-	if users, err := usersStorage.ListUsers(); err != nil {
+	if users, err := UsersStorage.ListUsers(); err != nil {
 		c.JSON(err.StatusCode, gin.H{"error": err.Message})
 		return
 	} else {
