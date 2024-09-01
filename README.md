@@ -118,15 +118,17 @@ Response:
 
 ```
 # Future Improvements
-### 1. Database Integration:
+### 1. Create user request Improvement:
+ID and signup time should not be part of POST request but I have added in POST request by mistake. The validations for these should be at database level. 
+### 2. Database Integration:
 Use a database like PostgreSQL or MySQL for persistent storage. This will allow the service to retain shortened URLs and metrics across restarts.
 Include a docker-compose.yml file to easily set up the database along with the service.
-### 2. Improved Logging:
+### 3. Improved Logging:
 Implement logging to a file for better traceability and debugging.
 Use structured logging libraries like logrus or zap.
-### 3. Authentication:
+### 4. Authentication:
 Improve authentication (e.g., API keys, OAuth) for URL shortening to restrict usage.
-### 4. Enhanced Comments:
+### 5. Enhanced Comments:
 Improve inline documentation and comments to make the codebase more understandable for new contributors. 
 
 # License
