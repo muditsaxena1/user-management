@@ -8,7 +8,7 @@ func SetupRoutes(router *gin.Engine) {
 		"admin": "password", // Hardcoded credentials for testing
 	}))
 
-	authorized.GET("/user/:id", GetUser)
-	authorized.POST("/user", SetUser)
-	authorized.GET("/users", ListUsers)
+	authorized.GET("/user/:id", getUser)
+	authorized.POST("/user", setUser)
+	authorized.GET("/users", listUsers)
 }
