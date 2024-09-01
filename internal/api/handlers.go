@@ -13,7 +13,7 @@ var (
 	UsersStorage = storage.NewInMemoryUserStorage()
 )
 
-func SetUser(c *gin.Context) {
+func setUser(c *gin.Context) {
 	var user models.User
 
 	// Bind the JSON body to the struct
@@ -55,7 +55,7 @@ func SetUser(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"status": "user set successfully"})
 }
 
-func GetUser(c *gin.Context) {
+func getUser(c *gin.Context) {
 	id := c.Param("id")
 
 	if user, err := UsersStorage.GetUser(id); err != nil {
@@ -66,7 +66,7 @@ func GetUser(c *gin.Context) {
 	}
 }
 
-func ListUsers(c *gin.Context) {
+func listUsers(c *gin.Context) {
 	if users, err := UsersStorage.ListUsers(); err != nil {
 		c.JSON(err.StatusCode, gin.H{"error": err.Message})
 		return

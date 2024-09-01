@@ -6,7 +6,7 @@ import (
 )
 
 type Storage interface {
-	SetUser(user models.User) *errors.CustomError
-	GetUser(id string) (*models.User, *errors.CustomError)
-	ListUsers() ([]models.User, *errors.CustomError)
+	SetUser(user models.User) *errors.Error
+	GetUser(id string) (*models.User, *errors.Error)
+	ListUsers() ([]models.User, *errors.Error)
 }
